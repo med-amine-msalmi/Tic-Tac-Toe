@@ -1,0 +1,11 @@
+C:\Users\ACER\source\repos\tic-tac-toe-game\bin\Debug\tic-tac-toe-game.exe.config
+C:\Users\ACER\source\repos\tic-tac-toe-game\bin\Debug\tic-tac-toe-game.exe
+C:\Users\ACER\source\repos\tic-tac-toe-game\bin\Debug\tic-tac-toe-game.pdb
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic_tac_toe_game.Form1.resources
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic_tac_toe_game.Properties.Resources.resources
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.csproj.GenerateResource.cache
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.exe
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.pdb
+C:\Users\ACER\source\repos\tic-tac-toe-game\obj\Debug\tic-tac-toe-game.exe.config
