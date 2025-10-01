@@ -24,7 +24,6 @@ namespace tic_tac_toe_game
         {
             InitializeComponent();
         }
-
         private bool changeTicTacToe(PictureBox box)
         {
          
@@ -32,17 +31,14 @@ namespace tic_tac_toe_game
             {
                 case Turn.Player1:
                     box.Image = Resources.X;
-
-
                     return true;
                 case Turn.Player2:
                     box.Image = Resources.O;
-
                     return true;
-                    
-                 
+                case Turn.Empty:
+                    MessageBox.Show("Restart the game to play again", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
                 default:
-                    MessageBox.Show("Game Over", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
             }
         }
@@ -90,7 +86,7 @@ namespace tic_tac_toe_game
         private bool checkWinner()
         {   
             //check rowz
-            for(int row = 0; row < 2; row++)
+            for(int row = 0; row < 3; row++)
             {
                
                     if (Board[row, 0] == playerTurn & Board[row, 1] == playerTurn & Board[row, 2] == playerTurn)
@@ -102,7 +98,7 @@ namespace tic_tac_toe_game
 
             }
             //check columns 
-            for(int column = 0; column < 2; column++)
+            for(int column = 0; column < 3; column++)
             {
                 
                      if(Board[0,column]==playerTurn & Board[1,column]==playerTurn & Board[2, column] == playerTurn)
@@ -213,9 +209,9 @@ namespace tic_tac_toe_game
             if (changeTicTacToe(pictureBox6))
             {
 
-            setCordinateInBoard(1,2,playerTurn);
+                setCordinateInBoard(1,2,playerTurn);
 
-            gameResult();
+                gameResult();
 
             }
 
