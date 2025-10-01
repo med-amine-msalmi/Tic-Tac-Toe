@@ -31,9 +31,11 @@ namespace tic_tac_toe_game
             {
                 case Turn.Player1:
                     box.Image = Resources.X;
+                   
                     return true;
                 case Turn.Player2:
                     box.Image = Resources.O;
+                 
                     return true;
                 case Turn.Empty:
                     MessageBox.Show("Restart the game to play again", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,6 +43,7 @@ namespace tic_tac_toe_game
                 default:
                     return false;
             }
+            
         }
         private void changePlayerTurn()
         {
@@ -117,6 +120,20 @@ namespace tic_tac_toe_game
             }
             return false;
         }
+        private bool checkDraw()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (Board[i, j] == Turn.Empty)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void gameResult()
         {
 
@@ -128,6 +145,14 @@ namespace tic_tac_toe_game
                 playerTurn = Turn.Empty;
                 return;
             }
+            if (checkDraw())
+            {
+
+                  MessageBox.Show("Draw , Restart the game to play again", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  playerTurn = Turn.Empty;
+                  return;
+            }
+               
             changePlayerTurn();
         }
         private void restartGame()
