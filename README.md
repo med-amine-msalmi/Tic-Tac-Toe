@@ -9,3 +9,11 @@ The first player who aligns three symbole Vertically , horizontally or diagonnal
 
 
 ## Start Screen
+![Start Game](startgame.png)
+
+## Winning
+
+![winning](winningcase.png)
+
+## draw
+![draw](drawcase.png)
