@@ -15,35 +15,35 @@ namespace tic_tac_toe_game
     public partial class Form1 : Form
     {
         enum Turn { Empty,Player1, Player2};
-        enum Result { Player1, Player2,Draw };
+       
 
         private Turn playerTurn=Turn.Player1;
-        private Result result;
+      
         private Turn[,] Board = new Turn[3, 3];
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void changeTicTacToe(PictureBox box)
+        private bool changeTicTacToe(PictureBox box)
         {
          
             switch (playerTurn)
             {
                 case Turn.Player1:
                     box.Image = Resources.X;
-                    
-                   
-                    break;
+
+
+                    return true;
                 case Turn.Player2:
                     box.Image = Resources.O;
-                   
-                  
-                    break;
+
+                    return true;
+                    
                  
                 default:
                     MessageBox.Show("Game Over", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
+                    return false;
             }
         }
         private void changePlayerTurn()
@@ -61,7 +61,7 @@ namespace tic_tac_toe_game
         private void setCordinateInBoard(short x, short y,Turn player)
         {
             
-            Board[x, y] = player;
+            Board[x,y] = player;
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -87,7 +87,7 @@ namespace tic_tac_toe_game
             e.Graphics.DrawLine(pen, 205, 335, 550, 335); 
         }
 
-        private Turn checkWinner()
+        private bool checkWinner()
         {   
             //check rowz
             for(int row = 0; row < 2; row++)
@@ -95,8 +95,8 @@ namespace tic_tac_toe_game
                
                     if (Board[row, 0] == playerTurn & Board[row, 1] == playerTurn & Board[row, 2] == playerTurn)
                     {
-                        
-                        return playerTurn;
+
+                    return true;
                     }
                
 
@@ -107,138 +107,154 @@ namespace tic_tac_toe_game
                 
                      if(Board[0,column]==playerTurn & Board[1,column]==playerTurn & Board[2, column] == playerTurn)
                      {
-                         return playerTurn;
+                         return true;
                      }
 
                  
             }
             //checks diagnols
             if(Board[0,0]==playerTurn & Board[1,1]==playerTurn & Board[2,2]==playerTurn)
-                { return playerTurn; }
+                { return true ; }
             if (Board[0,2]==playerTurn & Board[1,1]==playerTurn & Board[2, 0] == playerTurn)
             {
-                return playerTurn;
+                return true;
             }
-            return Turn.Empty;
+            return false;
         }
-
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        private void gameResult()
         {
-            changeTicTacToe(pictureBox1);
-            setCordinateInBoard(0, 0, playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+
+            if (checkWinner())
             {
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbWinner.Text=playerTurn.ToString();
+                MessageBox.Show($"{playerTurn} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                playerTurn = Turn.Empty;
+                return;
             }
             changePlayerTurn();
+        }
+        private void restartGame()
+        {
+            playerTurn = Turn.Player1;
+            lbTurn.Text = playerTurn.ToString();
+            lbWinner.Text="In Progress";
+            Board = new Turn[3, 3];
+            pictureBox1.Image = Resources.question_mark_96;
+            pictureBox2.Image = Resources.question_mark_96;
+            pictureBox3.Image = Resources.question_mark_96;
+            pictureBox4.Image = Resources.question_mark_96;
+            pictureBox5.Image = Resources.question_mark_96;
+            pictureBox6.Image = Resources.question_mark_96;
+            pictureBox7.Image = Resources.question_mark_96;
+            pictureBox8.Image = Resources.question_mark_96;
+            pictureBox9.Image = Resources.question_mark_96;
+        
+        }
+        
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (changeTicTacToe(pictureBox1))
+            {
+
+            setCordinateInBoard(0, 0, playerTurn);
+
+            gameResult();
+            }
         }
 
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe( pictureBox2);
-            setCordinateInBoard(0, 1, playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if(changeTicTacToe(pictureBox2))
             {
+                setCordinateInBoard(0, 1, playerTurn);
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gameResult();
+
             }
-            changePlayerTurn();
         }
 
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox3);
-            setCordinateInBoard(0, 2, playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if (changeTicTacToe(pictureBox3))
             {
+            setCordinateInBoard(0, 2, playerTurn);
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            gameResult();
+
             }
-            changePlayerTurn();
         }
 
         private void pictureBox4_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox4);
-
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+           if(changeTicTacToe(pictureBox4))
             {
+            setCordinateInBoard(1,0, playerTurn);
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            gameResult();
+
             }
-            changePlayerTurn() ;
 
         }
         private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox5);
-            setCordinateInBoard(1, 1, playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if (changeTicTacToe(pictureBox5))
             {
+            setCordinateInBoard(1, 1, playerTurn);
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            gameResult();
+
             }
         }
 
 
         private void pictureBox6_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox6);
-            setCordinateInBoard(1,2,playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if (changeTicTacToe(pictureBox6))
             {
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            changePlayerTurn();
+            setCordinateInBoard(1,2,playerTurn);
 
+            gameResult();
+
+            }
 
         }
 
         private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox7);
-            setCordinateInBoard(2,0,playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if (changeTicTacToe(pictureBox7))
             {
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setCordinateInBoard(2,0,playerTurn);
+                gameResult();
             }
-            changePlayerTurn();
         }
 
         private void pictureBox8_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox8);
-            setCordinateInBoard(2,1,playerTurn);
-            Turn Winner=checkWinner();
-            if (Winner!= Turn.Empty)
+            if (changeTicTacToe(pictureBox8))
             {
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            setCordinateInBoard(2,1,playerTurn);
+            gameResult();
             }
-            changePlayerTurn();
         }
 
         private void pictureBox9_MouseClick(object sender, MouseEventArgs e)
         {
-            changeTicTacToe(pictureBox9);
-            setCordinateInBoard(2,2,playerTurn);
-            Turn Winner = checkWinner();
-            if (Winner != Turn.Empty)
+            if (changeTicTacToe(pictureBox9))
             {
+                setCordinateInBoard(2, 2, playerTurn);
 
-                MessageBox.Show($"{Winner} wins the game", "Game Over ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gameResult();
+
             }
-            changePlayerTurn();
+        }
+
+        private void btRestart_Click(object sender, EventArgs e)
+        {
+            restartGame();
         }
     }
 }

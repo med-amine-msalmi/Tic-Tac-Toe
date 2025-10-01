@@ -119,6 +119,7 @@
             this.btRestart.TabIndex = 5;
             this.btRestart.Text = "Restart";
             this.btRestart.UseVisualStyleBackColor = true;
+            this.btRestart.Click += new System.EventHandler(this.btRestart_Click);
             // 
             // pictureBox1
             // 
