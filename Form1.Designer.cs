@@ -168,7 +168,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
-            this.pictureBox5.Location = new System.Drawing.Point(286, 430);
+            this.pictureBox5.Location = new System.Drawing.Point(446, 284);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(101, 104);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,7 +179,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
-            this.pictureBox6.Location = new System.Drawing.Point(446, 284);
+            this.pictureBox6.Location = new System.Drawing.Point(606, 284);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(101, 104);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -190,7 +190,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
-            this.pictureBox7.Location = new System.Drawing.Point(606, 284);
+            this.pictureBox7.Location = new System.Drawing.Point(286, 430);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(101, 104);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
