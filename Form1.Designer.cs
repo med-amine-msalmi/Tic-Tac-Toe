@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTurn = new System.Windows.Forms.Label();
@@ -111,121 +112,143 @@
             // 
             // btRestart
             // 
+            this.btRestart.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.97015F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRestart.ForeColor = System.Drawing.Color.Transparent;
             this.btRestart.Location = new System.Drawing.Point(26, 498);
             this.btRestart.Name = "btRestart";
             this.btRestart.Size = new System.Drawing.Size(183, 65);
             this.btRestart.TabIndex = 5;
             this.btRestart.Text = "Restart";
-            this.btRestart.UseVisualStyleBackColor = true;
+            this.btRestart.UseVisualStyleBackColor = false;
             this.btRestart.Click += new System.EventHandler(this.btRestart_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox1.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox1.Location = new System.Drawing.Point(286, 138);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(101, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.pictureBox1.Tag = "0,0";
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox2.Location = new System.Drawing.Point(446, 138);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(101, 104);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
+            this.pictureBox2.Tag = "0,1";
+            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
+            this.pictureBox3.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox3.Location = new System.Drawing.Point(606, 138);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(101, 104);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseClick);
+            this.pictureBox3.Tag = "0,2";
+            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox4.BackColor = System.Drawing.Color.Black;
+            this.pictureBox4.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox4.Location = new System.Drawing.Point(286, 284);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(101, 104);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox4_MouseClick);
+            this.pictureBox4.Tag = "1,0";
+            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox5.BackColor = System.Drawing.Color.Black;
+            this.pictureBox5.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox5.Location = new System.Drawing.Point(446, 284);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(101, 104);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseClick);
+            this.pictureBox5.Tag = "1,1";
+            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox6.BackColor = System.Drawing.Color.Black;
+            this.pictureBox6.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox6.Location = new System.Drawing.Point(606, 284);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(101, 104);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox6_MouseClick);
+            this.pictureBox6.Tag = "1,2";
+            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox7.BackColor = System.Drawing.Color.Black;
+            this.pictureBox7.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox7.Location = new System.Drawing.Point(286, 430);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(101, 104);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 12;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseClick);
+            this.pictureBox7.Tag = "2,0";
+            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox8.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox8.Location = new System.Drawing.Point(446, 430);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(101, 104);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseClick);
+            this.pictureBox8.Tag = "2,1";
+            this.pictureBox8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::tic_tac_toe_game.Properties.Resources.question_mark_96;
+            this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox9.Image = global::tic_tac_toe_game.Properties.Resources.games;
             this.pictureBox9.Location = new System.Drawing.Point(606, 430);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(101, 104);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 14;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox9_MouseClick);
+            this.pictureBox9.Tag = "2,2";
+            this.pictureBox9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1080, 645);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -242,8 +265,11 @@
             this.Controls.Add(this.lbTurn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tic Tac Toe";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

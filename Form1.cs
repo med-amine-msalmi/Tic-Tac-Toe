@@ -161,118 +161,33 @@ namespace tic_tac_toe_game
             lbTurn.Text = playerTurn.ToString();
             lbWinner.Text="In Progress";
             Board = new Turn[3, 3];
-            pictureBox1.Image = Resources.question_mark_96;
-            pictureBox2.Image = Resources.question_mark_96;
-            pictureBox3.Image = Resources.question_mark_96;
-            pictureBox4.Image = Resources.question_mark_96;
-            pictureBox5.Image = Resources.question_mark_96;
-            pictureBox6.Image = Resources.question_mark_96;
-            pictureBox7.Image = Resources.question_mark_96;
-            pictureBox8.Image = Resources.question_mark_96;
-            pictureBox9.Image = Resources.question_mark_96;
+            pictureBox1.Image = Resources.games;
+            pictureBox2.Image = Resources.games;
+            pictureBox3.Image = Resources.games;
+            pictureBox4.Image = Resources.games;
+            pictureBox5.Image = Resources.games;
+            pictureBox6.Image = Resources.games;
+            pictureBox7.Image = Resources.games;
+            pictureBox8.Image = Resources.games;
+            pictureBox9.Image = Resources.games;
         
         }
         
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        //assign one event for the all the 9 pictureBoxes
+        
+        private void pictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (changeTicTacToe(pictureBox1))
+            PictureBox pictureBox=(PictureBox)sender;
+            if(changeTicTacToe(pictureBox))
             {
 
-            setCordinateInBoard(0, 0, playerTurn);
-
-            gameResult();
-            }
-        }
-
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if(changeTicTacToe(pictureBox2))
-            {
-                setCordinateInBoard(0, 1, playerTurn);
-
-                gameResult();
-
-            }
-        }
-
-        private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox3))
-            {
-            setCordinateInBoard(0, 2, playerTurn);
-
-            gameResult();
-
-            }
-        }
-
-        private void pictureBox4_MouseClick(object sender, MouseEventArgs e)
-        {
-           if(changeTicTacToe(pictureBox4))
-            {
-            setCordinateInBoard(1,0, playerTurn);
-
-            gameResult();
-
-            }
-
-        }
-        private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox5))
-            {
-            setCordinateInBoard(1, 1, playerTurn);
-
-            gameResult();
-
-            }
-        }
-
-
-        private void pictureBox6_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox6))
-            {
-
-                setCordinateInBoard(1,2,playerTurn);
-
-                gameResult();
-
-            }
-
-        }
-
-        private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox7))
-            {
-
-                setCordinateInBoard(2,0,playerTurn);
+                short xCordiante = short.Parse(pictureBox.Tag.ToString().Split(',')[0]);
+                short yCordiante = short.Parse(pictureBox.Tag.ToString().Split(',')[1]);
+                setCordinateInBoard(xCordiante,yCordiante, playerTurn);
                 gameResult();
             }
         }
-
-        private void pictureBox8_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox8))
-            {
-
-            setCordinateInBoard(2,1,playerTurn);
-            gameResult();
-            }
-        }
-
-        private void pictureBox9_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (changeTicTacToe(pictureBox9))
-            {
-                setCordinateInBoard(2, 2, playerTurn);
-
-                gameResult();
-
-            }
-        }
-
+       
         private void btRestart_Click(object sender, EventArgs e)
         {
             restartGame();
